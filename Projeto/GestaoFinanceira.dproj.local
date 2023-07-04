@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/03/23 19:40:25.000.732,=C:\Users\Pedro\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2023/06/12 06:43:28.000.969,=C:\Users\Pedro\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2023/06/12 06:45:41.000.805,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Menu.pas=C:\Users\Pedro\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2023/06/12 06:45:41.000.805,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Menu.dfm=C:\Users\Pedro\Documents\Embarcadero\Studio\Projects\Unit3.dfm</Transaction>
+    <Transaction>2023/06/12 06:46:05.000.846,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Project2.dproj=C:\Users\Pedro\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2023/06/12 06:49:38.000.635,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/12 06:51:16.000.214,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\FormasPagamento.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/12 06:51:16.000.214,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\FormasPagamento.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2023/06/13 06:56:54.000.641,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/13 06:58:00.000.592,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit2.pas</Transaction>
+    <Transaction>2023/06/13 06:58:59.000.027,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\ConsultaFormasPagamento.pas</Transaction>
+    <Transaction>2023/06/13 06:58:59.000.027,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\ConsultaFormasPagamento.dfm</Transaction>
+    <Transaction>2023/06/13 07:00:46.000.680,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit2.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\ConsultaFormasPagamento.pas</Transaction>
+    <Transaction>2023/06/13 07:00:46.000.680,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit2.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\ConsultaFormasPagamento.dfm</Transaction>
+    <Transaction>2023/06/13 07:00:59.000.086,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/13 07:01:33.000.772,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Dados.pas</Transaction>
+    <Transaction>2023/06/13 07:01:33.000.772,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Dados.dfm</Transaction>
+    <Transaction>2023/06/15 07:01:39.000.574,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\ConsultaFormasPagamento.pas=</Transaction>
+    <Transaction>2023/06/15 07:05:09.000.002,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/15 07:06:22.000.468,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Cadastros\TiposDespesa.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/15 07:06:22.000.468,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Cadastros\TiposDespesa.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2023/06/19 06:18:26.000.267,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\GestaoFinanceira.dproj=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Project2.dproj</Transaction>
+    <Transaction>2023/06/19 06:19:43.000.534,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/19 06:20:58.000.065,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\RegistroContasPagar.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/19 06:20:58.000.065,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\RegistroContasPagar.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2023/06/19 06:21:46.000.205,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/19 06:22:33.000.955,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\ConsultaContasPagar.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/19 06:22:33.000.955,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\ConsultaContasPagar.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2023/06/22 06:46:22.000.626,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/06/22 06:55:49.000.474,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\FiltroConsultaContasPagar.dfm</Transaction>
+    <Transaction>2023/06/22 06:55:49.000.474,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\FiltroConsultaContasPagar.pas</Transaction>
+    <Transaction>2023/07/03 06:22:54.000.362,=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/07/03 06:24:50.000.372,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\RelatorioContasPagar.pas=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.pas</Transaction>
+    <Transaction>2023/07/03 06:24:50.000.372,C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Financeiro\RelatorioContasPagar.dfm=C:\Users\Pedro\Documents\Programação\Delphi\Gestão Financeira\Projeto\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

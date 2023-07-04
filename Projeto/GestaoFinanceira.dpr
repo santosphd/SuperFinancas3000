@@ -1,0 +1,28 @@
+program GestaoFinanceira;
+
+uses
+  Vcl.Forms,
+  Menu in 'Menu.pas' {frmMenu},
+  FormasPagamento in 'FormasPagamento.pas' {frmFormasPagamento},
+  Dados in 'Dados.pas' {dmDados: TDataModule},
+  TiposDespesa in 'Cadastros\TiposDespesa.pas' {frmTiposDespesa},
+  RegistroContasPagar in 'Financeiro\RegistroContasPagar.pas' {frmRegistroContasPagar},
+  ConsultaContasPagar in 'Financeiro\ConsultaContasPagar.pas' {frmConsultaContasPagar},
+  FiltroConsultaContasPagar in 'Financeiro\FiltroConsultaContasPagar.pas' {frmFiltroConsultaContasPagar},
+  RelatorioContasPagar in 'Financeiro\RelatorioContasPagar.pas' {frmRelatorioContasPagar};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TfrmFormaPagamento, frmFormaPagamento);
+  Application.CreateForm(TdmDados, dmDados);
+  Application.CreateForm(TfrmTiposDespesa, frmTiposDespesa);
+  Application.CreateForm(TfrmRegistroContasPagar, frmRegistroContasPagar);
+  Application.CreateForm(TfrmConsultaContasPagar, frmConsultaContasPagar);
+  Application.CreateForm(TfrmFiltroConsultaContasPagar, frmFiltroConsultaContasPagar);
+  Application.CreateForm(TfrmRelatorioContasPagar, frmRelatorioContasPagar);
+  Application.Run;
+end.

@@ -1,0 +1,20 @@
+program Project2;
+
+uses
+  Vcl.Forms,
+  Menu in 'Menu.pas' {frmMenu},
+  FormasPagamento in 'FormasPagamento.pas' {frmFormasPagamento},
+  ConsultaFormasPagamento in 'ConsultaFormasPagamento.pas' {frmConsultaFormasPagamento},
+  Dados in 'Dados.pas' {dmDados: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TfrmFormaPagamento, frmFormaPagamento);
+  Application.CreateForm(TfrmConsultaFormasPagamento, frmConsultaFormasPagamento);
+  Application.CreateForm(TdmDados, dmDados);
+  Application.Run;
+end.

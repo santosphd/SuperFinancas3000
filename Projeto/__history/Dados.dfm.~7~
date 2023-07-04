@@ -1,0 +1,92 @@
+object dmDados: TdmDados
+  Height = 480
+  Width = 640
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=gestao_financeira'
+      'User_Name=root'
+      'Password=skyliner32'
+      'Server=localhost'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 56
+    Top = 40
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    Left = 56
+    Top = 120
+  end
+  object tbFormaPagamento: TFDTable
+    Active = True
+    IndexFieldNames = 'codigo'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'gestao_financeira.forma_pagamento'
+    Left = 224
+    Top = 40
+  end
+  object queryFormaPagamento: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT codigo, descricao, banco, agencia, '
+      'conta, bandeira, data_cadastro '
+      'FROM forma_pagamento;')
+    Left = 360
+    Top = 40
+  end
+  object dsFormaPagamento: TDataSource
+    DataSet = queryFormaPagamento
+    Left = 496
+    Top = 40
+  end
+  object tbTipoDespesas: TFDTable
+    Active = True
+    IndexFieldNames = 'codigo'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'gestao_financeira.tipo_despesas'
+    Left = 224
+    Top = 120
+  end
+  object queryTipoDespesas: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT codigo, descricao, plano_de_contas, data_cadastro'
+      'FROM tipo_despesas ')
+    Left = 360
+    Top = 120
+  end
+  object dsTipoDespesas: TDataSource
+    DataSet = queryTipoDespesas
+    Left = 496
+    Top = 120
+  end
+  object tbDespesas: TFDTable
+    Active = True
+    IndexFieldNames = 'codigo'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'gestao_financeira.tipo_despesas'
+    Left = 224
+    Top = 200
+  end
+  object queryDespesas: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT id, documento, data_despesa, observacoes,'
+      'condicao_pagamento, gerar_parcelas, data_pagamento,'
+      'data_cadastro, codigo_tipo_despesas, codigo_forma_pagamento'
+      'FROM despesas')
+    Left = 360
+    Top = 200
+  end
+  object dsDespesas: TDataSource
+    DataSet = queryDespesas
+    Left = 496
+    Top = 200
+  end
+end

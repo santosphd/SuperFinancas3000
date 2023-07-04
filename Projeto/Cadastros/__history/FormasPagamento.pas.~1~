@@ -1,0 +1,24 @@
+unit FormasPagamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TfrmFormaPagamento = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFormaPagamento: TfrmFormaPagamento;
+
+implementation
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,178 @@
+object dmDados: TdmDados
+  Height = 480
+  Width = 640
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=gestao_financeira'
+      'User_Name=root'
+      'Password=skyliner32'
+      'Server=localhost'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 56
+    Top = 40
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    Left = 56
+    Top = 120
+  end
+  object tbFormaPagamento: TFDTable
+    Active = True
+    IndexFieldNames = 'codigo'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'gestao_financeira.forma_pagamento'
+    Left = 224
+    Top = 40
+  end
+  object queryFormaPagamento: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT codigo, descricao, banco, agencia, '
+      'conta, bandeira, data_cadastro '
+      'FROM forma_pagamento;')
+    Left = 360
+    Top = 40
+  end
+  object dsFormaPagamento: TDataSource
+    DataSet = queryFormaPagamento
+    Left = 496
+    Top = 40
+  end
+  object tbTipoDespesas: TFDTable
+    Active = True
+    IndexFieldNames = 'codigo'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'gestao_financeira.tipo_despesas'
+    Left = 224
+    Top = 120
+  end
+  object queryTipoDespesas: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT codigo, descricao, plano_de_contas, data_cadastro'
+      'FROM tipo_despesas ')
+    Left = 360
+    Top = 120
+  end
+  object dsTipoDespesas: TDataSource
+    DataSet = queryTipoDespesas
+    Left = 496
+    Top = 120
+  end
+  object tbDespesas: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'gestao_financeira.despesas'
+    Left = 224
+    Top = 200
+    object tbDespesasid: TFDAutoIncField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object tbDespesasdocumento: TIntegerField
+      FieldName = 'documento'
+      Origin = 'documento'
+      Required = True
+    end
+    object tbDespesasdata_despesa: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'data_despesa'
+      Origin = 'data_despesa'
+    end
+    object tbDespesasobservacoes: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'observacoes'
+      Origin = 'observacoes'
+      Size = 50
+    end
+    object tbDespesasvalor: TSingleField
+      AutoGenerateValue = arDefault
+      FieldName = 'valor'
+      Origin = 'valor'
+    end
+    object tbDespesascondicao_pagamento: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'condicao_pagamento'
+      Origin = 'condicao_pagamento'
+      Size = 10
+    end
+    object tbDespesasgerar_parcelas: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'gerar_parcelas'
+      Origin = 'gerar_parcelas'
+    end
+    object tbDespesasdata_pagamento: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'data_pagamento'
+      Origin = 'data_pagamento'
+    end
+    object tbDespesasdata_cadastro: TSQLTimeStampField
+      AutoGenerateValue = arDefault
+      FieldName = 'data_cadastro'
+      Origin = 'data_cadastro'
+    end
+    object tbDespesascodigo_tipo_despesas: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'codigo_tipo_despesas'
+      Origin = 'codigo_tipo_despesas'
+    end
+    object tbDespesascodigo_forma_pagamento: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'codigo_forma_pagamento'
+      Origin = 'codigo_forma_pagamento'
+    end
+    object tbDespesasnumero_parcela: TIntegerField
+      FieldName = 'numero_parcela'
+      Origin = 'numero_parcela'
+      Required = True
+    end
+    object tbDespesasstatus: TStringField
+      FieldName = 'status'
+      Origin = 'status'
+      Required = True
+      Size = 9
+    end
+  end
+  object queryDespesas: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT x.documento, x.data_despesa, x.data_pagamento,'
+      'x.observacoes, y.descricao AS '#39'FORMA DE PAGAMENTO'#39', '
+      'z.descricao AS "PLANO DE CONTAS", x.valor,'
+      'x.numero_parcela, x.status, x.data_cadastro'
+      'FROM despesas x '
+      
+        'INNER JOIN forma_pagamento y ON x.codigo_forma_pagamento = y.cod' +
+        'igo'
+      'INNER JOIN tipo_despesas z ON x.codigo_tipo_despesas = z.codigo')
+    Left = 360
+    Top = 200
+  end
+  object dsDespesas: TDataSource
+    DataSet = queryDespesas
+    Left = 496
+    Top = 200
+  end
+  object queryConsultaContasPagar: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      '')
+    Left = 360
+    Top = 280
+  end
+  object dsConsultaContasPagar: TDataSource
+    DataSet = queryConsultaContasPagar
+    Left = 496
+    Top = 280
+  end
+end

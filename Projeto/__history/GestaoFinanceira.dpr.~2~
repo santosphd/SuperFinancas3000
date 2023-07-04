@@ -1,0 +1,20 @@
+program GestaoFinanceira;
+
+uses
+  Vcl.Forms,
+  Menu in 'Menu.pas' {frmMenu},
+  FormasPagamento in 'FormasPagamento.pas' {frmFormasPagamento},
+  Dados in 'Dados.pas' {dmDados: TDataModule},
+  TiposDespesa in 'Cadastros\TiposDespesa.pas' {frmTiposDespesa};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMenu, frmMenu);
+  Application.CreateForm(TfrmFormaPagamento, frmFormaPagamento);
+  Application.CreateForm(TdmDados, dmDados);
+  Application.CreateForm(TfrmTiposDespesa, frmTiposDespesa);
+  Application.Run;
+end.
