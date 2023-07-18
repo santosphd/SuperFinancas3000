@@ -1,5 +1,5 @@
 # SuperFinancas3000
-Software para gestão financeira desenvolvido em Delphi e possui a finalidade de auxiliar na gestão financeira pessoal.
+Software para gestão financeira desenvolvido em Delphi com a finalidade de auxiliar na gestão financeira pessoal.
 
 # Funcionalidades
 - Cadastro de Tipos de Despesas;
