@@ -27,6 +27,8 @@ type
     DBGrid1: TDBGrid;
     edtCodigo: TEdit;
     Label7: TLabel;
+    edtBusca: TEdit;
+    CheckBox1: TCheckBox;
     procedure btnSalvarClick(Sender: TObject);
     procedure BuscarFormadePagamento1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -36,6 +38,8 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
+    procedure edtBuscaChange(Sender: TObject);
   private
     { Private declarations }
     procedure habilitarCampos;
@@ -45,6 +49,7 @@ type
     procedure listar;
     procedure entradaContasPagar;
     procedure entradaFiltroConsultaContasPagar;
+    procedure buscaDescricao;
   public
     { Public declarations }
   end;
@@ -62,6 +67,13 @@ uses ConsultaFormasPagamento, Dados, RegistroContasPagar,
 procedure TfrmFormaPagamento.BuscarFormadePagamento1Click(Sender: TObject);
 begin
 frmConsultaFormasPagamento.ShowModal;
+end;
+
+procedure TfrmFormaPagamento.CheckBox1Click(Sender: TObject);
+begin
+  edtBusca.Enabled := True;
+  btnEditar.Enabled := True;
+  btnExcluir.Enabled := True;
 end;
 
 procedure TfrmFormaPagamento.DBGrid1CellClick(Column: TColumn);
@@ -100,10 +112,16 @@ begin
   btnExcluir.Enabled := False;
 end;
 
+procedure TfrmFormaPagamento.edtBuscaChange(Sender: TObject);
+begin
+  buscaDescricao();
+end;
+
 procedure TfrmFormaPagamento.entradaContasPagar;
 begin
   frmFormaPagamento.Close;
   frmRegistroContasPagar.edtFormaPagamento.Text := DBGrid1.Fields [0].Value;
+  frmRegistroContasPagar.edtDescricaoFormaPagamento.Text := DBGrid1.Fields [1].Value;
 end;
 
 procedure TfrmFormaPagamento.entradaFiltroConsultaContasPagar;
@@ -117,6 +135,7 @@ procedure TfrmFormaPagamento.FormClick(Sender: TObject);
 begin
   desabilitarCampos();
   limparCampos();
+  dmDados.tbFormaPagamento.Cancel;
 end;
 
 procedure TfrmFormaPagamento.FormShow(Sender: TObject);
@@ -218,6 +237,7 @@ procedure TfrmFormaPagamento.btnNovoClick(Sender: TObject);
 begin
   habilitarCampos();
   limparCampos();
+  btnEditar.Enabled := False;
   dmDados.tbFormaPagamento.Insert; // ENTRA NO MODO DE INSERÇÃO DE DADOS
 
 end;
@@ -239,6 +259,15 @@ begin
   btnSalvar.Enabled := False;
   listar();
 
+end;
+
+procedure TfrmFormaPagamento.buscaDescricao;
+begin
+  dmDados.queryFormaPagamento.Close;
+  dmDados.queryFormaPagamento.SQL.Clear;
+  dmDados.queryFormaPagamento.SQL.Add('SELECT codigo, descricao, banco, agencia, conta, bandeira, data_cadastro FROM forma_pagamento WHERE descricao LIKE :descricao');
+  dmDados.queryFormaPagamento.ParamByName('descricao').Value := '%' + edtBusca.Text + '%';
+  dmDados.queryFormaPagamento.Open;
 end;
 
 end.

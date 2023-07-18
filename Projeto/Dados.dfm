@@ -4,8 +4,8 @@ object dmDados: TdmDados
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=gestao_financeira'
-      'User_Name=root'
-      'Password=skyliner32'
+      'User_Name=financeiro'
+      'Password=financeiro1234'
       'Server=localhost'
       'DriverID=MySQL')
     Connected = True
@@ -148,13 +148,14 @@ object dmDados: TdmDados
     SQL.Strings = (
       'SELECT x.documento, x.data_despesa, x.data_pagamento,'
       'x.observacoes, y.descricao AS '#39'FORMA DE PAGAMENTO'#39', '
-      'z.descricao AS "PLANO DE CONTAS", x.valor,'
+      'z.descricao AS '#39'PLANO DE CONTAS'#39', x.valor,'
       'x.numero_parcela, x.status, x.data_cadastro'
       'FROM despesas x '
       
         'INNER JOIN forma_pagamento y ON x.codigo_forma_pagamento = y.cod' +
         'igo'
-      'INNER JOIN tipo_despesas z ON x.codigo_tipo_despesas = z.codigo')
+      'INNER JOIN tipo_despesas z ON x.codigo_tipo_despesas = z.codigo'
+      'WHERE x.data_cadastro = CURDATE()')
     Left = 360
     Top = 200
   end
@@ -166,7 +167,14 @@ object dmDados: TdmDados
   object queryConsultaContasPagar: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      '')
+      'SELECT x.documento, x.data_despesa, x.data_pagamento,'
+      'x.observacoes, z.plano_de_contas AS "PLANO DE CONTAS", x.valor,'
+      'x.numero_parcela, x.status'
+      
+        'FROM despesas x INNER JOIN forma_pagamento y ON x.codigo_forma_p' +
+        'agamento = y.codigo'
+      'INNER JOIN tipo_despesas z ON x.codigo_tipo_despesas = z.codigo'
+      'WHERE data_despesa = CURDATE()')
     Left = 360
     Top = 280
   end

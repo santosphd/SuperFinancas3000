@@ -122,7 +122,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         ParentFont = False
       end
       object RLLabel5: TRLLabel
-        Left = 129
+        Left = 193
         Top = 6
         Width = 68
         Height = 14
@@ -135,7 +135,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         ParentFont = False
       end
       object RLLabel6: TRLLabel
-        Left = 262
+        Left = 295
         Top = 6
         Width = 79
         Height = 14
@@ -148,7 +148,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         ParentFont = False
       end
       object RLLabel7: TRLLabel
-        Left = 429
+        Left = 440
         Top = 6
         Width = 100
         Height = 14
@@ -161,7 +161,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         ParentFont = False
       end
       object RLLabel8: TRLLabel
-        Left = 535
+        Left = 546
         Top = 6
         Width = 56
         Height = 14
@@ -174,7 +174,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         ParentFont = False
       end
       object RLLabel9: TRLLabel
-        Left = 597
+        Left = 608
         Top = 6
         Width = 31
         Height = 14
@@ -187,11 +187,24 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         ParentFont = False
       end
       object RLLabel10: TRLLabel
-        Left = 661
+        Left = 671
         Top = 6
         Width = 44
         Height = 14
         Caption = 'STATUS'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object RLLabel11: TRLLabel
+        Left = 129
+        Top = 6
+        Width = 39
+        Height = 14
+        Caption = 'PAGTO'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -11
@@ -204,7 +217,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
       Left = 38
       Top = 153
       Width = 718
-      Height = 40
+      Height = 24
       Borders.Sides = sdCustom
       Borders.DrawLeft = False
       Borders.DrawTop = False
@@ -232,7 +245,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         Text = ''
       end
       object RLDBText2: TRLDBText
-        Left = 41
+        Left = 48
         Top = 6
         Width = 48
         Height = 10
@@ -247,7 +260,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         Text = ''
       end
       object RLDBText3: TRLDBText
-        Left = 129
+        Left = 193
         Top = 6
         Width = 45
         Height = 10
@@ -262,7 +275,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         Text = ''
       end
       object RLDBText4: TRLDBText
-        Left = 262
+        Left = 295
         Top = 6
         Width = 96
         Height = 10
@@ -277,7 +290,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         Text = ''
       end
       object RLDBText5: TRLDBText
-        Left = 429
+        Left = 440
         Top = 6
         Width = 76
         Height = 10
@@ -292,7 +305,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         Text = ''
       end
       object RLDBText6: TRLDBText
-        Left = 535
+        Left = 546
         Top = 6
         Width = 19
         Height = 10
@@ -307,7 +320,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         Text = ''
       end
       object RLDBText7: TRLDBText
-        Left = 600
+        Left = 608
         Top = 6
         Width = 57
         Height = 10
@@ -322,7 +335,7 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         Text = ''
       end
       object RLDBText8: TRLDBText
-        Left = 661
+        Left = 671
         Top = 6
         Width = 22
         Height = 10
@@ -336,26 +349,41 @@ object frmRelatorioContasPagar: TfrmRelatorioContasPagar
         ParentFont = False
         Text = ''
       end
+      object RLDBText9: TRLDBText
+        Left = 130
+        Top = 6
+        Width = 57
+        Height = 10
+        DataField = 'data_pagamento'
+        DataSource = dmDados.dsDespesas
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -8
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Text = ''
+      end
     end
     object rlbRodape: TRLBand
       Left = 38
-      Top = 193
+      Top = 177
       Width = 718
       Height = 56
       BandType = btFooter
     end
-  end
-  object RLXLSXFilter1: TRLXLSXFilter
-    DisplayName = 'Planilha Excel'
-    Left = 568
-    Top = 392
   end
   object RLPDFFilter1: TRLPDFFilter
     DocumentInfo.Creator = 
       'FortesReport Community Edition v4.0.1.2 \251 Copyright '#169' 1999-20' +
       '21 Fortes Inform'#225'tica'
     DisplayName = 'Documento PDF'
-    Left = 408
+    Left = 432
+    Top = 376
+  end
+  object RLXLSXFilter1: TRLXLSXFilter
+    DisplayName = 'Planilha Excel'
+    Left = 632
     Top = 384
   end
 end

@@ -21,6 +21,8 @@ type
     edtPlanoDeContas: TEdit;
     edtCodigo: TEdit;
     DBGrid1: TDBGrid;
+    edtBusca: TEdit;
+    CheckBox1: TCheckBox;
     procedure btnNovoClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
@@ -29,6 +31,8 @@ type
     procedure FormClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure edtBuscaChange(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
   private
     { Private declarations }
     procedure habilitarCampos;
@@ -38,6 +42,7 @@ type
     procedure listar;
     procedure entradaContasPagar;
     procedure entradaFiltroConsultaContasPagar;
+    procedure buscaDescricao;
   public
     { Public declarations }
   end;
@@ -115,6 +120,7 @@ procedure TfrmTiposDespesa.btnNovoClick(Sender: TObject);
 begin
   habilitarCampos();
   limparCampos();
+  btnEditar.Enabled := False;
   dmDados.tbTipoDespesas.Insert; // ENTRA NO MODO DE INSERÇÃO DE DADOS
 end;
 
@@ -144,17 +150,33 @@ begin
 
 end;
 
+procedure TfrmTiposDespesa.buscaDescricao;
+begin
+  dmDados.queryTipoDespesas.Close;
+  dmDados.queryTipoDespesas.SQL.Clear;
+  dmDados.queryTipoDespesas.SQL.ADD('SELECT codigo, descricao, plano_de_contas, data_cadastro FROM tipo_despesas WHERE descricao LIKE :descricao');
+  dmDados.queryTipoDespesas.ParamByName('descricao').Value := '%' + edtBusca.Text + '%';
+  dmDados.queryTipoDespesas.Open;
+end;
+
+procedure TfrmTiposDespesa.CheckBox1Click(Sender: TObject);
+begin
+  edtBusca.Enabled := True;
+  btnEditar.Enabled := True;
+  btnExcluir.Enabled := True;
+end;
+
 procedure TfrmTiposDespesa.DBGrid1CellClick(Column: TColumn);
 begin
-  habilitarCampos;
+  habilitarCampos();
   btnEditar.Enabled := True;
   btnExcluir.Enabled := True;
   btnSalvar.Enabled := False;
 
   dmDados.tbTipoDespesas.Edit;
+  edtCodigo.Text := dmDados.queryTipoDespesas.FieldByName('codigo').Value;
   edtDescricao.Text := dmDados.queryTipoDespesas.FieldByName('descricao').Value;
   edtPlanoDeContas.Text := dmDados.queryTipoDespesas.FieldByName('plano_de_contas').Value;
-  edtCodigo.Text := dmDados.queryFormaPagamento.FieldByName('codigo').Value;
 end;
 
 procedure TfrmTiposDespesa.DBGrid1DblClick(Sender: TObject);
@@ -173,10 +195,16 @@ begin
   btnExcluir.Enabled := False;
 end;
 
+procedure TfrmTiposDespesa.edtBuscaChange(Sender: TObject);
+begin
+  buscaDescricao();
+end;
+
 procedure TfrmTiposDespesa.entradaContasPagar;
 begin
   frmTiposDespesa.Close;
   frmRegistroContasPagar.edtTipoDespesa.Text := DBGrid1.Fields [0].Value;
+  frmRegistroContasPagar.edtDescricaoTipoDespesa.Text := DBGrid1.Fields [1].Value;
 end;
 
 procedure TfrmTiposDespesa.entradaFiltroConsultaContasPagar;
@@ -190,6 +218,7 @@ procedure TfrmTiposDespesa.FormClick(Sender: TObject);
 begin
   desabilitarCampos();
   limparCampos();
+  dmDados.tbTipoDespesas.Cancel;
 end;
 
 procedure TfrmTiposDespesa.FormShow(Sender: TObject);
@@ -213,13 +242,14 @@ begin
   edtCodigo.Text := '';
   edtDescricao.Text := '';
   edtPlanoDeContas.Text := '';
+  edtBusca.Text := '';
 end;
 
 procedure TfrmTiposDespesa.listar;
 begin
   dmDados.queryTipoDespesas.Close;
   dmDados.queryTipoDespesas.SQL.Clear;
-  dmDados.queryTipoDespesas.SQL.Add('SELECT codigo, descricao, plano_de_contas, data_cadastro FROM tipo_despesas ');
+  dmDados.queryTipoDespesas.SQL.Add('SELECT codigo, descricao, plano_de_contas, data_cadastro FROM tipo_despesas');
   dmDados.queryTipoDespesas.Open;
 end;
 

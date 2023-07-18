@@ -1,17 +1,19 @@
 object frmConsultaContasPagar: TfrmConsultaContasPagar
   Left = 0
-  Top = 0
+  Top = 50
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Consulta de Contas '#224' Pagar'
-  ClientHeight = 401
-  ClientWidth = 796
+  ClientHeight = 493
+  ClientWidth = 779
   Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
+  OnShow = FormShow
   TextHeight = 15
   object Label6: TLabel
     Left = 8
@@ -27,8 +29,8 @@ object frmConsultaContasPagar: TfrmConsultaContasPagar
     ParentFont = False
   end
   object SpeedButton1: TSpeedButton
-    Left = 584
-    Top = 41
+    Left = 528
+    Top = 104
     Width = 85
     Height = 40
     Caption = 'Filtrar'
@@ -92,8 +94,8 @@ object frmConsultaContasPagar: TfrmConsultaContasPagar
     OnClick = SpeedButton1Click
   end
   object SpeedButton2: TSpeedButton
-    Left = 696
-    Top = 41
+    Left = 632
+    Top = 104
     Width = 85
     Height = 40
     Caption = 'Exportar'
@@ -156,13 +158,36 @@ object frmConsultaContasPagar: TfrmConsultaContasPagar
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     OnClick = SpeedButton2Click
   end
+  object Label1: TLabel
+    Left = 258
+    Top = 96
+    Width = 32
+    Height = 15
+    Caption = 'Inicio:'
+  end
+  object Label2: TLabel
+    Left = 267
+    Top = 125
+    Width = 23
+    Height = 15
+    Caption = 'Fim:'
+  end
+  object Label3: TLabel
+    Left = 24
+    Top = 71
+    Width = 54
+    Height = 15
+    Caption = 'Filtrar por:'
+  end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 91
-    Width = 796
-    Height = 310
+    Top = 152
+    Width = 779
+    Height = 341
     Align = alBottom
+    BorderStyle = bsNone
     DataSource = dmDados.dsConsultaContasPagar
+    DrawingStyle = gdsGradient
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -232,5 +257,41 @@ object frmConsultaContasPagar: TfrmConsultaContasPagar
         Width = 120
         Visible = True
       end>
+  end
+  object cbDataPagamento: TCheckBox
+    Left = 72
+    Top = 117
+    Width = 133
+    Height = 17
+    Caption = 'Data do Pagamento'
+    TabOrder = 1
+    OnClick = cbDataPagamentoClick
+  end
+  object cbDataDespesa: TCheckBox
+    Left = 72
+    Top = 94
+    Width = 112
+    Height = 17
+    Caption = 'Data da Despesa'
+    TabOrder = 2
+    OnClick = cbDataDespesaClick
+  end
+  object dtpInicio: TDateTimePicker
+    Left = 296
+    Top = 88
+    Width = 81
+    Height = 23
+    Date = 45111.000000000000000000
+    Time = 0.278767025462002500
+    TabOrder = 3
+  end
+  object dtpFim: TDateTimePicker
+    Left = 296
+    Top = 117
+    Width = 81
+    Height = 23
+    Date = 45111.000000000000000000
+    Time = 0.278767025462002500
+    TabOrder = 4
   end
 end

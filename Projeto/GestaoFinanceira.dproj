@@ -84,6 +84,11 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <UWP_DelphiLogo44>..\..\..\..\..\Desktop\Logo 2.jpg</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\..\..\..\..\Desktop\Logo 2.jpg</UWP_DelphiLogo150>
+        <Icon_MainIcon>GestaoFinanceira_Icon3.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -123,12 +128,16 @@
             <Form>frmConsultaContasPagar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Financeiro\RelatorioContasPagar.pas">
+            <Form>frmRelatorioContasPagar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="Financeiro\FiltroConsultaContasPagar.pas">
             <Form>frmFiltroConsultaContasPagar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Financeiro\RelatorioContasPagar.pas">
-            <Form>frmRelatorioContasPagar</Form>
+        <DCCReference Include="Sobre.pas">
+            <Form>frmSobre</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -151,8 +160,19 @@
                 <Source>
                     <Source Name="MainSource">GestaoFinanceira.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
+                <DeployFile LocalName="..\..\..\..\..\Desktop\Logo 2.jpg" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Debug\GestaoFinanceira.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>GestaoFinanceira.exe</RemoteName>

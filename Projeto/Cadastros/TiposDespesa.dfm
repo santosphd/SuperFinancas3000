@@ -4,8 +4,8 @@ object frmTiposDespesa: TfrmTiposDespesa
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Tipos de Despesa'
-  ClientHeight = 389
-  ClientWidth = 525
+  ClientHeight = 533
+  ClientWidth = 507
   Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -42,8 +42,8 @@ object frmTiposDespesa: TfrmTiposDespesa
     ParentFont = False
   end
   object btnNovo: TSpeedButton
-    Left = 96
-    Top = 316
+    Left = 310
+    Top = 191
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -106,8 +106,8 @@ object frmTiposDespesa: TfrmTiposDespesa
     OnClick = btnNovoClick
   end
   object btnExcluir: TSpeedButton
-    Left = 384
-    Top = 316
+    Left = 456
+    Top = 191
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -171,8 +171,8 @@ object frmTiposDespesa: TfrmTiposDespesa
     OnClick = btnExcluirClick
   end
   object btnSalvar: TSpeedButton
-    Left = 184
-    Top = 316
+    Left = 357
+    Top = 191
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -248,8 +248,8 @@ object frmTiposDespesa: TfrmTiposDespesa
     ParentFont = False
   end
   object btnEditar: TSpeedButton
-    Left = 283
-    Top = 316
+    Left = 404
+    Top = 191
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -321,7 +321,7 @@ object frmTiposDespesa: TfrmTiposDespesa
   object edtDescricao: TEdit
     Left = 96
     Top = 109
-    Width = 377
+    Width = 401
     Height = 23
     CharCase = ecUpperCase
     TabOrder = 0
@@ -329,7 +329,7 @@ object frmTiposDespesa: TfrmTiposDespesa
   object edtPlanoDeContas: TEdit
     Left = 96
     Top = 146
-    Width = 377
+    Width = 401
     Height = 23
     CharCase = ecUpperCase
     TabOrder = 1
@@ -343,11 +343,14 @@ object frmTiposDespesa: TfrmTiposDespesa
     TabOrder = 2
   end
   object DBGrid1: TDBGrid
-    Left = 51
-    Top = 190
-    Width = 422
-    Height = 120
+    Left = 0
+    Top = 254
+    Width = 507
+    Height = 279
+    Align = alBottom
+    BorderStyle = bsNone
     DataSource = dmDados.dsTipoDespesas
+    DrawingStyle = gdsGradient
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -368,6 +371,7 @@ object frmTiposDespesa: TfrmTiposDespesa
         Expanded = False
         FieldName = 'descricao'
         Title.Caption = 'DESCRICAO'
+        Width = 194
         Visible = True
       end
       item
@@ -382,5 +386,24 @@ object frmTiposDespesa: TfrmTiposDespesa
         Title.Caption = 'DATA DE CADASTRO'
         Visible = True
       end>
+  end
+  object edtBusca: TEdit
+    Left = 135
+    Top = 208
+    Width = 121
+    Height = 23
+    CharCase = ecUpperCase
+    Enabled = False
+    TabOrder = 4
+    OnChange = edtBuscaChange
+  end
+  object CheckBox1: TCheckBox
+    Left = 8
+    Top = 211
+    Width = 121
+    Height = 17
+    Caption = 'Consulta por Desc.:'
+    TabOrder = 5
+    OnClick = CheckBox1Click
   end
 end

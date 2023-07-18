@@ -2,9 +2,10 @@ object frmFormaPagamento: TfrmFormaPagamento
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Formas de Pagamento'
-  ClientHeight = 509
-  ClientWidth = 514
+  ClientHeight = 547
+  ClientWidth = 479
   Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +16,7 @@ object frmFormaPagamento: TfrmFormaPagamento
   OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
-    Left = 59
+    Left = 43
     Top = 150
     Width = 31
     Height = 13
@@ -28,7 +29,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 41
+    Left = 25
     Top = 113
     Width = 49
     Height = 13
@@ -41,7 +42,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 49
+    Left = 33
     Top = 190
     Width = 41
     Height = 13
@@ -54,7 +55,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 59
+    Left = 43
     Top = 232
     Width = 31
     Height = 13
@@ -67,7 +68,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 45
+    Left = 29
     Top = 269
     Width = 45
     Height = 13
@@ -80,8 +81,8 @@ object frmFormaPagamento: TfrmFormaPagamento
     ParentFont = False
   end
   object btnNovo: TSpeedButton
-    Left = 91
-    Top = 435
+    Left = 269
+    Top = 294
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -144,8 +145,8 @@ object frmFormaPagamento: TfrmFormaPagamento
     OnClick = btnNovoClick
   end
   object btnExcluir: TSpeedButton
-    Left = 384
-    Top = 435
+    Left = 416
+    Top = 294
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -209,8 +210,8 @@ object frmFormaPagamento: TfrmFormaPagamento
     OnClick = btnExcluirClick
   end
   object btnSalvar: TSpeedButton
-    Left = 184
-    Top = 435
+    Left = 316
+    Top = 294
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -286,8 +287,8 @@ object frmFormaPagamento: TfrmFormaPagamento
     ParentFont = False
   end
   object btnEditar: TSpeedButton
-    Left = 283
-    Top = 435
+    Left = 363
+    Top = 294
     Width = 41
     Height = 49
     Glyph.Data = {
@@ -350,14 +351,14 @@ object frmFormaPagamento: TfrmFormaPagamento
     OnClick = btnEditarClick
   end
   object Label7: TLabel
-    Left = 51
+    Left = 35
     Top = 75
     Width = 39
     Height = 15
     Caption = 'C'#243'digo'
   end
   object edtDescricao: TEdit
-    Left = 96
+    Left = 80
     Top = 109
     Width = 377
     Height = 23
@@ -365,7 +366,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     TabOrder = 0
   end
   object edtBanco: TEdit
-    Left = 96
+    Left = 80
     Top = 146
     Width = 377
     Height = 23
@@ -373,7 +374,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     TabOrder = 1
   end
   object edtAgencia: TEdit
-    Left = 96
+    Left = 80
     Top = 186
     Width = 121
     Height = 23
@@ -381,7 +382,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     TabOrder = 2
   end
   object edtConta: TEdit
-    Left = 96
+    Left = 80
     Top = 228
     Width = 121
     Height = 23
@@ -389,7 +390,7 @@ object frmFormaPagamento: TfrmFormaPagamento
     TabOrder = 3
   end
   object edtBandeira: TEdit
-    Left = 96
+    Left = 80
     Top = 265
     Width = 121
     Height = 23
@@ -397,11 +398,14 @@ object frmFormaPagamento: TfrmFormaPagamento
     TabOrder = 4
   end
   object DBGrid1: TDBGrid
-    Left = 41
-    Top = 309
-    Width = 432
-    Height = 120
+    Left = 0
+    Top = 357
+    Width = 479
+    Height = 190
+    Align = alBottom
+    BorderStyle = bsNone
     DataSource = dmDados.dsFormaPagamento
+    DrawingStyle = gdsGradient
     TabOrder = 5
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -460,11 +464,30 @@ object frmFormaPagamento: TfrmFormaPagamento
       end>
   end
   object edtCodigo: TEdit
-    Left = 96
+    Left = 80
     Top = 72
     Width = 121
     Height = 23
     Enabled = False
     TabOrder = 6
+  end
+  object edtBusca: TEdit
+    Left = 142
+    Top = 312
+    Width = 121
+    Height = 23
+    CharCase = ecUpperCase
+    Enabled = False
+    TabOrder = 7
+    OnChange = edtBuscaChange
+  end
+  object CheckBox1: TCheckBox
+    Left = 15
+    Top = 315
+    Width = 121
+    Height = 17
+    Caption = 'Consulta por Desc.:'
+    TabOrder = 8
+    OnClick = CheckBox1Click
   end
 end

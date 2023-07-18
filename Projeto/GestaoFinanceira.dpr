@@ -8,8 +8,9 @@ uses
   TiposDespesa in 'Cadastros\TiposDespesa.pas' {frmTiposDespesa},
   RegistroContasPagar in 'Financeiro\RegistroContasPagar.pas' {frmRegistroContasPagar},
   ConsultaContasPagar in 'Financeiro\ConsultaContasPagar.pas' {frmConsultaContasPagar},
+  RelatorioContasPagar in 'Financeiro\RelatorioContasPagar.pas' {frmRelatorioContasPagar},
   FiltroConsultaContasPagar in 'Financeiro\FiltroConsultaContasPagar.pas' {frmFiltroConsultaContasPagar},
-  RelatorioContasPagar in 'Financeiro\RelatorioContasPagar.pas' {frmRelatorioContasPagar};
+  Sobre in 'Sobre.pas' {frmSobre};
 
 {$R *.res}
 
@@ -22,7 +23,8 @@ begin
   Application.CreateForm(TfrmTiposDespesa, frmTiposDespesa);
   Application.CreateForm(TfrmRegistroContasPagar, frmRegistroContasPagar);
   Application.CreateForm(TfrmConsultaContasPagar, frmConsultaContasPagar);
-  Application.CreateForm(TfrmFiltroConsultaContasPagar, frmFiltroConsultaContasPagar);
   Application.CreateForm(TfrmRelatorioContasPagar, frmRelatorioContasPagar);
+  Application.CreateForm(TfrmFiltroConsultaContasPagar, frmFiltroConsultaContasPagar);
+  Application.CreateForm(TfrmSobre, frmSobre);
   Application.Run;
 end.
